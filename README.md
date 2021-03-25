@@ -18,3 +18,7 @@
 ### Viikko 2
 
 [Viikko2](/laskarit/viikko2)
+
+### Viikko 3
+
+[Viikko3](/laskarit/viikko3)
