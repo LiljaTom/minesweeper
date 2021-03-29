@@ -14,7 +14,7 @@ public class NodeTest {
 
     @Before
     public void setUp() {
-        node = new Node(5, 8, true);
+        node = new Node(5, 8);
     }
 
     @Test
@@ -33,8 +33,8 @@ public class NodeTest {
     }
 
     @Test
-    public void nodeConstructorSetsCorrectValueForIsMine() {
-        assertEquals(true, node.getIsMine());
+    public void nodeConstructorSetsCorrectDefaultValueForIsMine() {
+        assertEquals(false, node.getIsMine());
     }
 
 }

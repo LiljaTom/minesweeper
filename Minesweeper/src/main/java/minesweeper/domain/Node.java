@@ -17,13 +17,12 @@ public class Node {
      *
      * @param y Node's y coordinate
      * @param x Node's x coordinate
-     * @param isMine True if node is mine
      */
-    public Node(int y, int x, boolean isMine) {
+    public Node(int y, int x) {
         this.y = y;
         this.x = x;
         this.value = 0;
-        this.isMine = isMine;
+        this.isMine = false;
     }
 
     public int getY() {
@@ -54,7 +53,7 @@ public class Node {
         this.value = value;
     }
 
-    public void setIsMine(boolean isMine) {
+    public void setMine(boolean isMine) {
         this.isMine = isMine;
     }
 
