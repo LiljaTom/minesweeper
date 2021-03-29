@@ -7,12 +7,13 @@ Sovellus on versio perinteisestä miinaharavasta. Pelin tarkoitus on selvittää
 ## Käyttäjät
 
 - Aluksi sovellus ei sisällä eri käyttäjärooleja
-- Eri oikeuksia omaavia käyttäjiä lisätään, jos sovelluksen ominaisuuksia siirretään verkkoon.
+- Sovelluksen kehityksen loppuvaiheessa mahdollisesti lisätään admin käyttäjä.
 
 ## Perusversion toiminnallisuudet
 
 - Peliä voi pelata eri vaikeusasteilla
 - Pelin tulokset tallennetaan
+- Pelaaja voi pelata peliä mukautetuilla asetuksilla.
 
 
 ## Jatkokehitys ideat
