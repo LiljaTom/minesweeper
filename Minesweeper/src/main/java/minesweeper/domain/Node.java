@@ -57,4 +57,35 @@ public class Node {
         this.isMine = isMine;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + this.y;
+        hash = 89 * hash + this.x;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Node other = (Node) obj;
+        if (this.y != other.y) {
+            return false;
+        }
+        if (this.x != other.x) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 }

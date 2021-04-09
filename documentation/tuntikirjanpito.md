@@ -4,4 +4,6 @@
 | :----:|:-----| :-----|
 | 25.3  | 1   | Vaatimusmäärittely, sovelluksen alustaminen |
 | 29.3  | 3   | Ohjelmoinnin aloittaminen | 
-| yht.  | 4   ||
+| 8.4 | 3 | Sovelluslogiikan rakentamista |
+| 9.4 | 2 | Lisää ohjelmointia ja testien lisäämistä |
+| yht.  | 9   ||
