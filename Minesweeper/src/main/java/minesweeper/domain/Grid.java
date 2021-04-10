@@ -55,11 +55,22 @@ public class Grid {
      * @return true if node in coordinate (x, y) is mine
      */
     public boolean isMine(int y, int x) {
+        if(!inGrid(y, x)) {
+            return false;
+        }
         return this.nodeGrid[y][x].getIsMine();
     }
     
     public void setMine(int y, int x) {
         this.nodeGrid[y][x].setMine(true);
+    }
+    
+    public void setValue(int y, int x, int value) {
+        this.nodeGrid[y][x].setValue(value);
+    }
+    
+    public int getValue(int y, int x) {
+        return this.nodeGrid[y][x].getValue();
     }
     
     public Node getRandomNode() {
@@ -126,7 +137,7 @@ public class Grid {
         }
         
         //down-right
-        if (inGrid(downY, rightX) && isMine(upY, rightX)) {
+        if (inGrid(downY, rightX) && isMine(downY, rightX)) {
             mineCount++;
         }
         
