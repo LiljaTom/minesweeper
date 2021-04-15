@@ -7,4 +7,5 @@
 | 8.4 | 3 | Sovelluslogiikan rakentamista |
 | 9.4 | 2 | Lisää ohjelmointia ja testien lisäämistä |
 | 10.4 | 2 | Luokkien laajentamista ja käyttöliittymän käyttöönotto |
-| yht.  | 11   ||
+| 15.4 | 2 | DifficultyLevel luokan luominen ja suunnittelua |
+| yht.  | 13   ||
