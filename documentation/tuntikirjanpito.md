@@ -8,4 +8,5 @@
 | 9.4 | 2 | Lisää ohjelmointia ja testien lisäämistä |
 | 10.4 | 2 | Luokkien laajentamista ja käyttöliittymän käyttöönotto |
 | 15.4 | 2 | DifficultyLevel luokan luominen ja suunnittelua |
-| yht.  | 13   ||
+| 16.4 | 2 | Checkstyle, Gameservice tarjoaa käyttöliittymälle toiminnallisuuden ja pieniä korjauksia |
+| yht.  | 15   ||
