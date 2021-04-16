@@ -18,18 +18,18 @@ public class Grid {
         this.width = width;
         this.nodeGrid = new Node[height][width];
         this.nodes = new ArrayList<>();
-        
+
         initGrid();
     }
-    
+
     public void initGrid() {
-        for(int y = 0; y < height; y++) {
-            for(int x = 0; x < width; x++) {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
                 Node node = new Node(y, x);
                 this.nodeGrid[y][x] = node;
                 this.nodes.add(node);
             }
-        } 
+        }
     }
 
     /**
@@ -55,62 +55,61 @@ public class Grid {
      * @return true if node in coordinate (x, y) is mine
      */
     public boolean isMine(int y, int x) {
-        if(!inGrid(y, x)) {
+        if (!inGrid(y, x)) {
             return false;
         }
         return this.nodeGrid[y][x].getIsMine();
     }
-    
+
     public void setMine(int y, int x) {
         this.nodeGrid[y][x].setMine(true);
     }
-    
+
     public void setValue(int y, int x, int value) {
         this.nodeGrid[y][x].setValue(value);
     }
-    
+
     public int getValue(int y, int x) {
         return this.nodeGrid[y][x].getValue();
     }
-    
+
     public Node getRandomNode() {
         Random rnd = new Random();
         int index = rnd.nextInt(this.nodes.size());
-        
+
         Node randomNode = this.nodes.get(index);
         this.nodes.remove(randomNode);
-        
+
         return randomNode;
     }
-    
+
     public void fillGridWithMines(int amount) {
-        for(int i = 0; i < amount; i++) {
+        for (int i = 0; i < amount; i++) {
             Node node = getRandomNode();
             setMine(node.getY(), node.getX());
         }
     }
-    
+
     public int getMineCount() {
         int mineCount = 0;
-        
-        for(int y = 0; y < height; y++) {
-            for(int x = 0; x < width; x++) {
-                if(nodeGrid[y][x].getIsMine()) {
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                if (nodeGrid[y][x].getIsMine()) {
                     mineCount++;
                 }
             }
         }
-        
+
         return mineCount;
     }
 
-
     /**
      * Counts how many mines there are next to given coordinates
-     * 
+     *
      * @param y y coordinate
      * @param x x coordinate
-     * 
+     *
      * @return how many mines are next to given coordinate(x,y)
      */
     public int countNodeValue(int y, int x) {
@@ -125,27 +124,27 @@ public class Grid {
         if (inGrid(upY, x) && isMine(upY, x)) {
             mineCount++;
         }
-        
+
         //top-right
         if (inGrid(upY, rightX) && isMine(upY, rightX)) {
             mineCount++;
         }
-        
+
         //top-left
-        if (inGrid(upY,leftX) && isMine(upY, leftX)) {
+        if (inGrid(upY, leftX) && isMine(upY, leftX)) {
             mineCount++;
         }
-        
+
         //down-right
         if (inGrid(downY, rightX) && isMine(downY, rightX)) {
             mineCount++;
         }
-        
+
         //down-left
         if (inGrid(downY, leftX) && isMine(downY, leftX)) {
             mineCount++;
         }
-        
+
         //down
         if (inGrid(downY, x) && isMine(downY, x)) {
             mineCount++;
@@ -167,7 +166,5 @@ public class Grid {
     public ArrayList<Node> getNodes() {
         return nodes;
     }
-    
-    
 
 }
