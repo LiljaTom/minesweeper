@@ -5,7 +5,11 @@
 
 [Vaatimusmäärittely](/documentation/maarittelydokumentti.md)
 
+[Arkkitehtuuri](/documentation/arkkitehtuuri.md)
+
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
+
+
 
 ## Komentorivitoiminnot
 
@@ -27,4 +31,10 @@ Testikattavuusraportti voidaan luoda komennolla
 
 ```
 mvn jacoco:report
+```
+
+Checkstyle voidaan suorittaa komennolla
+
+```
+mvn jxr:jxr checkstyle:checkstyle
 ```
