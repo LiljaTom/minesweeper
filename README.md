@@ -1,5 +1,6 @@
 # Ohjelmistotekniikka, kevät 2021
 
+Sovellus on versio perinteisestä miinaharava pelistä. 
 
 ## Dokumentaatio 
 
