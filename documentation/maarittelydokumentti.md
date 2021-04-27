@@ -11,7 +11,7 @@ Sovellus on versio perinteisestä miinaharavasta. Pelin tarkoitus on selvittää
 
 ## Perusversion toiminnallisuudet
 
-- Peliä voi pelata eri vaikeusasteilla.
+- Peliä voi pelata eri vaikeusasteilla.(tehty)
 - Pelin tulokset tallennetaan
 - Pelaaja voi pelata peliä mukautetuilla asetuksilla.
 

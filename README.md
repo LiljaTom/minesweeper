@@ -39,3 +39,8 @@ Checkstyle voidaan suorittaa komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
+Sovelluksesta voidaan luoda jar-tiedoston komennolla 
+
+```
+mvn package
+```

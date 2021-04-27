@@ -10,4 +10,5 @@
 | 15.4 | 2 | DifficultyLevel luokan luominen ja suunnittelua |
 | 16.4 | 2 | Checkstyle, Gameservice tarjoaa käyttöliittymälle toiminnallisuuden ja pieniä korjauksia |
 | 19.4 | 2 | Dokumentaation lisäys |
-| yht.  | 17   ||
+| 27.4 | 4 | Dokumentaation päivitys, sovelluksen toiminnallisuuksien parantaminen ja muutoksia |
+| yht.  | 21   ||
