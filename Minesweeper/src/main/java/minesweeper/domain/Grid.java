@@ -1,5 +1,6 @@
 package minesweeper.domain;
 
+//import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,14 +11,17 @@ import java.util.Random;
 public class Grid {
 
     private Node[][] nodeGrid;
-    private ArrayList<Node> nodes;
+    private ArrayList<Node> nodes, toShow;
     private int height, width;
+    private boolean[][] visited;
 
     public Grid(int height, int width) {
         this.height = height;
         this.width = width;
         this.nodeGrid = new Node[height][width];
+        this.visited = new boolean[height][width];
         this.nodes = new ArrayList<>();
+        this.toShow = new ArrayList<>();
 
         initGrid();
     }
@@ -102,6 +106,35 @@ public class Grid {
         }
 
         return mineCount;
+    }
+
+    public ArrayList<Node> getNodesToShow(int y, int x) {
+        this.toShow = new ArrayList<>();
+        
+        search(y, x);
+        
+        return toShow;
+    }
+
+    //DFs search
+    public void search(int y, int x) {
+
+        if (!inGrid(y, x) || visited[y][x]) {
+            return;
+        }
+        this.visited[y][x] = true;
+
+        if (this.nodeGrid[y][x].getValue() != 0 || this.nodeGrid[y][x].getIsMine()) {
+            return;
+        }
+
+        this.toShow.add(new Node(y, x));
+
+        for (int ry = (y - 1); ry < (y + 2); ry++) {
+            for (int rx = (x - 1); rx < (x + 2); rx++) {
+                search(ry, rx);
+            }
+        }
     }
 
     /**
