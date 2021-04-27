@@ -10,7 +10,9 @@ Sovellus on versio perinteisestä miinaharava pelistä.
 
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
 
+## Releaset
 
+[Viikko 5](https://github.com/LiljaTom/minesweeper/releases)
 
 ## Komentorivitoiminnot
 
@@ -43,4 +45,10 @@ Sovelluksesta voidaan luoda jar-tiedoston komennolla
 
 ```
 mvn package
+```
+Komento generoi target hakemistoon tiedoston Minesweeper-1.0-SNAPSHOT.jar
+
+Jar-tiedosto voidaan suorittaa komennolla 
+```
+java -jar Minesweeper-1.0-SNAPSHOT.jar
 ```
