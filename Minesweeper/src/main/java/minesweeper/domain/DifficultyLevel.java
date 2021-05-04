@@ -1,7 +1,8 @@
 package minesweeper.domain;
 
 /**
- *
+ * Class to handle difficulty settings
+ * 
  * @author lilja
  */
 public class DifficultyLevel {
@@ -18,6 +19,12 @@ public class DifficultyLevel {
         this.height = 0;
     }
 
+    /**
+     * Initializes difficulty.
+     * 
+     * Sets correct variable values to match difficulty level.
+     * 
+     */
     public void initDifficulty() {
         if (level.equals("easy")) {
             setMines(10);

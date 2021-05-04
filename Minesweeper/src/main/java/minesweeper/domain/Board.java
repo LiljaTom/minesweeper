@@ -3,7 +3,8 @@ package minesweeper.domain;
 import java.util.ArrayList;
 
 /**
- *
+ * Class which handles grid and builds gameboard
+ * 
  * @author lilja
  */
 public class Board {
@@ -20,6 +21,12 @@ public class Board {
         this.opened = new boolean[height][width];
     }
 
+    /**
+     * Builds board.
+     * 
+     * Fills grid with mines and counts node values.
+     * 
+     */
     public void buildBoard() {
 
         grid.fillGridWithMines(this.mines);
