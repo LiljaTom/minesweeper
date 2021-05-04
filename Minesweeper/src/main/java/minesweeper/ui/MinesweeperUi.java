@@ -17,8 +17,8 @@ public class MinesweeperUi extends Application {
     @Override
     public void start(Stage stage) {
         
-        int screenWidth = 400;
-        int screenHeight = 400;
+        int screenWidth = 600;
+        int screenHeight = 600;
         
         GameService game = new GameService("hard");
         GameBoard board = new GameBoard(game, screenHeight, screenWidth);

@@ -48,6 +48,18 @@ public class GameNode {
         this.rect.setFill(Color.WHITE);
         this.rect.setStroke(Color.GREY);
     }
+    
+    public void setText(String text) {
+        this.text.setText(text);
+    }
+    
+    public String getText() {
+        return this.text.getText();
+    }
+    
+    public void toggleVisibility() {
+        this.text.setVisible(!this.text.isVisible());
+    }
 
     public StackPane getStack() {
         return this.stack;

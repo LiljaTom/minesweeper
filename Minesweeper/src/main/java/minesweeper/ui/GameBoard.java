@@ -1,5 +1,6 @@
 package minesweeper.ui;
 
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import minesweeper.domain.GameService;
 import minesweeper.domain.Node;
@@ -30,12 +31,30 @@ public class GameBoard {
                 int ry = y;
                 int rx = x;
 
-                node.getStack().setOnMouseClicked(event -> leftClick(ry, rx));
+                node.getStack().setOnMouseClicked(event -> {
+                    if(event.getButton() == MouseButton.PRIMARY) {
+                        leftClick(ry, rx);
+                    } else if(event.getButton() == MouseButton.SECONDARY) {
+                        rightClick(ry, rx);
+                    }
+                });
 
                 board.getChildren().add(node.getStack());
             }
         }
 
+    }
+    
+    public void rightClick(int y, int x) {
+        if(this.nodes[y][x].getText().equals("F")) {
+            this.nodes[y][x].setText("?");
+        } else if(this.nodes[y][x].getText().equals("?")) {
+            this.nodes[y][x].toggleVisibility();
+            this.nodes[y][x].setText(this.game.getStatus(y, x));
+        } else {
+            this.nodes[y][x].toggleVisibility();
+            this.nodes[y][x].setText("F");
+        }
     }
 
     public void leftClick(int y, int x) {
