@@ -14,7 +14,7 @@ Sovellus on versio perinteisestä miinaharava pelistä.
 
 ## Releaset
 
-[Viikko 5](https://github.com/LiljaTom/minesweeper/releases)
+[Viikko 5](https://github.com/LiljaTom/minesweeper/releases/tag/viikko6)
 
 ## Komentorivitoiminnot
 
