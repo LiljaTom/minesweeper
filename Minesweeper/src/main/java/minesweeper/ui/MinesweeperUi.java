@@ -20,7 +20,7 @@ public class MinesweeperUi extends Application {
         int screenWidth = 400;
         int screenHeight = 400;
         
-        GameService game = new GameService("easy");
+        GameService game = new GameService("hard");
         GameBoard board = new GameBoard(game, screenHeight, screenWidth);
         
         Scene scene = new Scene(board.getBoard());

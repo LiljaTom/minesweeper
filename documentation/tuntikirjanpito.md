@@ -11,4 +11,6 @@
 | 16.4 | 2 | Checkstyle, Gameservice tarjoaa käyttöliittymälle toiminnallisuuden ja pieniä korjauksia |
 | 19.4 | 2 | Dokumentaation lisäys |
 | 27.4 | 4 | Dokumentaation päivitys, sovelluksen toiminnallisuuksien parantaminen ja muutoksia |
-| yht.  | 21   ||
+| 3.5 | 2 | Käyttöliittymän uudistaminen |
+| 4.5 | 4 | Käyttöliittymän jatkaminen ja pieniä muokkauksia |
+| yht.  | 27   ||

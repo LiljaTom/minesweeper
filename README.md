@@ -8,6 +8,8 @@ Sovellus on versio perinteisestä miinaharava pelistä.
 
 [Arkkitehtuuri](/documentation/arkkitehtuuri.md)
 
+[Käyttöohje](/documentation/kayttoohje.md)
+
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
 
 ## Releaset
@@ -51,4 +53,9 @@ Komento generoi target hakemistoon tiedoston Minesweeper-1.0-SNAPSHOT.jar
 Jar-tiedosto voidaan suorittaa komennolla 
 ```
 java -jar Minesweeper-1.0-SNAPSHOT.jar
+```
+
+Javadoc voidaan generoida komennolla
+```
+mvn javadoc:javadoc
 ```
