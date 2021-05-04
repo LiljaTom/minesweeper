@@ -1,11 +1,11 @@
 package minesweeper.domain;
 
-//import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
+ *  Contains and handles nodes
+ * 
  * @author lilja
  */
 public class Grid {
@@ -26,6 +26,9 @@ public class Grid {
         initGrid();
     }
 
+    /**
+     * Initializes the grid
+     */
     public void initGrid() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
@@ -52,6 +55,7 @@ public class Grid {
     }
 
     /**
+     * Checks if given coordinate contains mine
      *
      * @param y y coordinate
      * @param x x coordinate
@@ -77,6 +81,12 @@ public class Grid {
         return this.nodeGrid[y][x].getValue();
     }
 
+    /**
+     * Gets random node from node list and removes it.
+     * So basicly performs pull.
+     * 
+     * @return random node
+     */
     public Node getRandomNode() {
         Random rnd = new Random();
         int index = rnd.nextInt(this.nodes.size());
@@ -87,6 +97,14 @@ public class Grid {
         return randomNode;
     }
 
+    /**
+     * Fills grid with mines.
+     * Uses getRandomNode() to make random nodes mine.
+     * 
+     * @param amount amount of mines we want to add to the grid.
+     * 
+     * @see minesweeper.domain.Grid#getRandomNode() 
+     */
     public void fillGridWithMines(int amount) {
         for (int i = 0; i < amount; i++) {
             Node node = getRandomNode();
@@ -110,13 +128,20 @@ public class Grid {
 
     public ArrayList<Node> getNodesToShow(int y, int x) {
         this.toShow = new ArrayList<>();
-        
+
         search(y, x);
-        
+
         return toShow;
     }
 
-    //DFs search
+    /**
+     * Finds adjacent empty nodes and their neighbouring nodes
+     * 
+     * method for GUI
+     * 
+     * @param y y coordinate
+     * @param x x coordinate
+     */
     public void search(int y, int x) {
 
         if (!inGrid(y, x) || visited[y][x]) {
@@ -124,7 +149,13 @@ public class Grid {
         }
         this.visited[y][x] = true;
 
-        if (this.nodeGrid[y][x].getValue() != 0 || this.nodeGrid[y][x].getIsMine()) {
+        if (this.nodeGrid[y][x].getIsMine()) {
+            return;
+        }
+
+        if (this.nodeGrid[y][x].getValue() != 0) {
+            this.toShow.add(new Node(y, x));
+
             return;
         }
 
@@ -146,51 +177,15 @@ public class Grid {
      * @return how many mines are next to given coordinate(x,y)
      */
     public int countNodeValue(int y, int x) {
-        int upY = y - 1;
-        int downY = y + 1;
-        int rightX = x + 1;
-        int leftX = x - 1;
 
         int mineCount = 0;
 
-        //top
-        if (inGrid(upY, x) && isMine(upY, x)) {
-            mineCount++;
-        }
-
-        //top-right
-        if (inGrid(upY, rightX) && isMine(upY, rightX)) {
-            mineCount++;
-        }
-
-        //top-left
-        if (inGrid(upY, leftX) && isMine(upY, leftX)) {
-            mineCount++;
-        }
-
-        //down-right
-        if (inGrid(downY, rightX) && isMine(downY, rightX)) {
-            mineCount++;
-        }
-
-        //down-left
-        if (inGrid(downY, leftX) && isMine(downY, leftX)) {
-            mineCount++;
-        }
-
-        //down
-        if (inGrid(downY, x) && isMine(downY, x)) {
-            mineCount++;
-        }
-
-        //right
-        if (inGrid(y, rightX) && isMine(y, rightX)) {
-            mineCount++;
-        }
-
-        //left
-        if (inGrid(y, leftX) && isMine(y, leftX)) {
-            mineCount++;
+        for (int ry = (y - 1); ry <= (y + 1); ry++) {
+            for (int rx = (x - 1); rx <= (x + 1); rx++) {
+                if (inGrid(ry, rx) && isMine(ry, rx)) {
+                    mineCount++;
+                }
+            }
         }
 
         return mineCount;
