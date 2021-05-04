@@ -1,5 +1,7 @@
 package minesweeper.domain;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author lilja
@@ -38,6 +40,10 @@ public class Board {
             return "X";
         }
         return String.valueOf(grid.getValue(y, x));
+    }
+    
+    public ArrayList<Node> newEmpties(int y, int x) {
+        return this.grid.getNodesToShow(y, x);
     }
 
 }
